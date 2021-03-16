@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+read -p "Reken de som 4*23 uit om het geheime krabburgerrecept te bemachtigen: " var1
+
+if [[ $var1 == 92 ]]
+then
+	echo "Leuk geprobeert Plankton"
+	firefox "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+fi

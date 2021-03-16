@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+
+if test -f "$1/$3.txt"; then
+	rm $1/$3.txt
+fi
+log_datum=`date '+%F -- %T'`
+echo "datum = $log_datum"
+
+touch "$1/$3".txt
+
+for bestand in $1/*
+do
+	if $bestand $2; then
+		printf "$bestand	 TRUE\n\n" >> $1/$3.txt	
+	else
+		printf "$bestand	 FALSE\n\n" >> $1/$3.txt
+	fi
+	#echo "$bestand $2";
+done
+	

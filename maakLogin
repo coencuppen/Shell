@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+
+read -p "Voer uw naam in: " name
+if [[ $name == "" ]]
+then
+	name=$(whoami)
+fi
+
+echo "$name"
+ 
+while true
+do
+	read -p "Voer een wachtwoord in: " password_1
+	read -p "Voer het wachtwoord nogmaals in: " password_2
+	if [[ $password_1 == $password_2 ]] && [[ ${#password_2} -gt 7 ]]
+	then
+		touch $1.txt
+		printf "naam: $name\n" >> $1.txt
+		printf "$password_1" | md5sum  >> $1.txt
+		printf "\n\n" >> $1.txt
+		echo "Gelukt!"
+		break
+	fi
+done
+		
+	

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+case $1 in 
+	*.py)
+	python $1
+	;;
+	*.sh)
+	bash $1
+	;;
+	*.cc)
+	cat $1
+	;;
+	*)
+	echo "Error: verkeerde bestandtype"
+	;;
+esac

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+for filename in $1/*.jpg; do
+	basename="$(basename "$filename" .jpg)"
+	convert "$filename" -resize 128x128 "$1/$basename.png"
+done
